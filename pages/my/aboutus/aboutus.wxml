@@ -1,0 +1,17 @@
+<!--pages/my/aboutus/aboutus.wxml-->
+<view class='view_bg'>
+
+  <view class='text_view_style'>
+
+    <image bindtap="previewImage" class='qr_style'                src='https://raw.githubusercontent.com/zhangliwen1101/Images/master/img/ic_qr_code.png'></image>
+
+    <view class='text_style'>QQ群号：582049938</view>
+
+    <view class='text_style'>QQ：383755537</view>
+
+    <view class='text_style'>微信：bjawenfd</view>
+
+    <view class='text_style'>需要定制可以联系我，免费</view>
+  </view>
+
+</view>
