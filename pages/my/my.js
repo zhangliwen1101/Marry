@@ -18,7 +18,7 @@ Page({
     showModalStatus: false,
     user_identity: user_identity,
     title_hint: '请填写',
-    logo: 'https://github.com/zhangliwen1101/Images/blob/master/img/logo.jpg'
+    logo: '../../image/logo.jpg'
   },
   onLoad: function() {
     console.log('onLoad')

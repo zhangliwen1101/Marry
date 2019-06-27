@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/splash/splash",
     "pages/home/home",
     "pages/my/my",
     "pages/home/gridview/gridview",

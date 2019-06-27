@@ -14,7 +14,6 @@ page{
 }
 .view_bg{
   height: 100%;
-  background: url('https://raw.githubusercontent.com/zhangliwen1101/Images/master/img/bg_fation_gril.jpg') no-repeat center;
   background-size: 100% 100%;
 }
 .qr_style{

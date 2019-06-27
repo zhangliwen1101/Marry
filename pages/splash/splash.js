@@ -11,7 +11,7 @@ Page({
     userid: '',
     passwd: '',
     angle: 0,
-    logo: 'https://raw.githubusercontent.com/zhangliwen1101/Images/master/img/logo.jpg',
+    logo: '../../image/logo.jpg',
     appName: "Marry"
   },
   onLoad: function(options) {
@@ -105,23 +105,23 @@ Page({
   getUserInfo(e) {
     console.log('getUserInfo')
     var that = this
-    if (e.detail.errMsg === 'getUserInfo:ok') {
-      console.log('获取用户信息成功')
+    // if (e.detail.errMsg === 'getUserInfo:ok') {
+      // console.log('获取用户信息成功')
       app.globalData.userInfo = e.detail.rawData
       console.log('app.globalData.userInfo', app.globalData.userInfo)
       that.getUser()
-    } else {
-      console.log('fail', '获取用户信息失败')
-      wx.showModal({
-        title: '提示',
-        content: '获取用户信息失败',
-        showCancel: false,
-        confirmColor: '#e2211c',
-        success(res) {
+    // } else {
+    //   console.log('fail', '获取用户信息失败')
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '获取用户信息失败',
+    //     showCancel: false,
+    //     confirmColor: '#e2211c',
+    //     success(res) {
 
-        }
-      })
-    }
+    //     }
+    //   })
+    // }
   },
   /**
    * 复制图片信息

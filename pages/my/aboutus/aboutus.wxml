@@ -1,9 +1,9 @@
 <!--pages/my/aboutus/aboutus.wxml-->
-<view class='view_bg'>
+<view class='view_bg' style="background-image: url('../../../image/bg_fation_gril.jpg'); background-size: 100% 100%;">
 
   <view class='text_view_style'>
 
-    <image bindtap="previewImage" class='qr_style'                src='https://raw.githubusercontent.com/zhangliwen1101/Images/master/img/ic_qr_code.png'></image>
+    <image bindtap="previewImage" class='qr_style'  src='../../../image/ic_qr_code.png'></image>
 
     <view class='text_style'>QQ群号：582049938</view>
 
