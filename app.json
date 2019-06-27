@@ -6,6 +6,7 @@
     "pages/home/gridview/gridview",
     "pages/map/map",
     "pages/my/aboutus/aboutus",
+    "pages/bless/bless",
     "pages/bless/blessDetail/blessDetail",
     "pages/my/aboutProject/aboutProject",
     "pages/my/flow/flow"

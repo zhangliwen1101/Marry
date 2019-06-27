@@ -106,14 +106,13 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
+  * 用户点击右上角分享
+  */
   onShareAppMessage: function () {
     var that = this;
-    //console.log(that.data);
     return {
-      title: '诚意邀请你参加我们的婚礼',
-      imageUrl: 'https://raw.githubusercontent.com/zhangliwen1101/Images/master/img/zhoujielun.jpg',
+      title: '制作属于你自己的婚礼邀请函',
+      imageUrl: "/image/03.jpg",
       path: "pages/splash/splash?hostUserId=" + app.globalData.hostUserId,
       success: function (res) {
         wx.showToast({

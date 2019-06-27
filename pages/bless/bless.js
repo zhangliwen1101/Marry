@@ -162,62 +162,62 @@ Page({
   /**
    * 修改分享图片
    */
-  upLoadImage: function () {
-    var that = this;
-    wx.chooseImage({
-      // 设置最多可以选择的图片张数，默认9,如果我们设置了多张,那么接收时//就不在是单个变量了,
-      count: 1,
-      sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
-      success: function (res) {
-        // 获取成功,将获取到的地址赋值给临时变量
-        var tempFilePaths = res.tempFilePaths
+  // upLoadImage: function () {
+  //   var that = this;
+  //   wx.chooseImage({
+  //     // 设置最多可以选择的图片张数，默认9,如果我们设置了多张,那么接收时//就不在是单个变量了,
+  //     count: 1,
+  //     sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+  //     sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+  //     success: function (res) {
+  //       // 获取成功,将获取到的地址赋值给临时变量
+  //       var tempFilePaths = res.tempFilePaths
 
-        wx.uploadFile({
-          url: api.mobileIn, //此处换上你的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          header: {
-            "Content-Type": "multipart/form-data",
-            'accept': 'application/json',
-            'Authorization': 'Bearer ..', //若有token，此处换上你的token，没有的话省略
-            'method': 'SAVE_SHARE_INFO'
-          },
-          formData: {
-            'userId': app.globalData.hostUserId,
-            'host': api.host,
-            'inputTitleName': inputTitleName
-          },
-          success: function (res) {
-            wx.showModal({
-              title: '提示',
-              content: res.data,
-              showCancel: false
-            })
-          },
-          fail: function (res) {
-            wx.showModal({
-              title: '提示',
-              content: res.data,
-              showCancel: false
-            })
-          },
-        })
+  //       wx.uploadFile({
+  //         url: api.mobileIn, //此处换上你的接口地址
+  //         filePath: tempFilePaths[0],
+  //         name: 'file',
+  //         header: {
+  //           "Content-Type": "multipart/form-data",
+  //           'accept': 'application/json',
+  //           'Authorization': 'Bearer ..', //若有token，此处换上你的token，没有的话省略
+  //           'method': 'SAVE_SHARE_INFO'
+  //         },
+  //         formData: {
+  //           'userId': app.globalData.hostUserId,
+  //           'host': api.host,
+  //           'inputTitleName': inputTitleName
+  //         },
+  //         success: function (res) {
+  //           wx.showModal({
+  //             title: '提示',
+  //             content: res.data,
+  //             showCancel: false
+  //           })
+  //         },
+  //         fail: function (res) {
+  //           wx.showModal({
+  //             title: '提示',
+  //             content: res.data,
+  //             showCancel: false
+  //           })
+  //         },
+  //       })
 
-      },
-      fail: function (res) {
-        // fail
-      },
-      complete: function (res) {
-        // complete
-      }
-    })
-  },
-  bindKeyInput: function(e) {
-    this.setData({
-      inputValue: e.detail.value
-    })
-  },
+  //     },
+  //     fail: function (res) {
+  //       // fail
+  //     },
+  //     complete: function (res) {
+  //       // complete
+  //     }
+  //   })
+  // },
+  // bindKeyInput: function(e) {
+  //   this.setData({
+  //     inputValue: e.detail.value
+  //   })
+  // },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -285,19 +285,18 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
-
+  onShareAppMessage: function () {
     var that = this;
     return {
-      title: inputTitleName,
-      imageUrl: bgShare,
+      title: '制作属于你自己的婚礼邀请函',
+      imageUrl: "/image/03.jpg",
       path: "pages/splash/splash?hostUserId=" + app.globalData.hostUserId,
-      success: function(res) {
+      success: function (res) {
         wx.showToast({
           title: '分享成功',
         })
       },
-      fail: function(res) {
+      fail: function (res) {
         // 转发失败
         wx.showToast({
           title: '分享取消',
@@ -309,7 +308,7 @@ Page({
     var that = this;
 
     var userInfo = JSON.parse(app.globalData.userInfo);
-    console.log(userInfo)
+    console.log("asdsadassa"+userInfo)
     var name = userInfo.nickName;
     var face = userInfo.avatarUrl;
 
