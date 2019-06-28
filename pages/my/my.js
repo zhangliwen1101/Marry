@@ -18,7 +18,26 @@ Page({
     showModalStatus: false,
     user_identity: user_identity,
     title_hint: '请填写',
-    logo: '../../image/logo.jpg'
+    logo: '../../image/logo.jpg',
+    sharelist: [{
+      url: '/image/01.jpg',
+      name: '初次见你的时候，没想到会这样爱你',
+    }, {
+      url: '/image/02.jpg',
+      name: '从爱上你那天起，甜蜜变得很轻易',
+    }, {
+      url: '/image/03.jpg',
+      name: '这个世界一点都不温柔，还好有你',
+    }, {
+      url: '/image/04.jpg',
+      name: '你是年少的欢喜，这句话反过来也是你',
+    }, {
+      url: '/image/05.jpg',
+      name: '我的故事，都是关于你啊',
+    }, {
+      url: '/image/0813061.jpg',
+      name: '想和你喝酒是假的，想醉你怀里是真的',
+    }]
   },
   onLoad: function() {
     console.log('onLoad')
@@ -340,9 +359,10 @@ Page({
    */
   onShareAppMessage: function () {
     var that = this;
+    var random = Math.floor(Math.random() * 6);
     return {
-      title: '制作属于你自己的婚礼邀请函',
-      imageUrl: "/image/03.jpg",
+      title: this.data.sharelist[random].name,
+      imageUrl: this.data.sharelist[random].url,
       path: "pages/splash/splash?hostUserId=" + app.globalData.hostUserId,
       success: function (res) {
         wx.showToast({
